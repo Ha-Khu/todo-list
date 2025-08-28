@@ -47,17 +47,104 @@ main {
 .input-container{
   margin-top: 20px;
   width: 70%;
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  margin-bottom: 25px;
 }
 
 .input-text{
-  width: 70%;
-  height: 3.5vh;
-  border-radius: 12px;
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  outline: none;
+  color: var(--dark-purple);
 }
 
 .add-btn{
-  width: 30%;
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%);
+  height: 52px;
+  padding: 0 34px;
+  border: none;
+  border-radius: 18px;
+  background: var(--bright-red);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.add-btn:active{
+  background: var(--darker-red);
+  -webkit-box-shadow: inset 0px 0px 5px var(--bright-red);
+     -moz-box-shadow: inset 0px 0px 5px var(--bright-red);
+          box-shadow: inset 0px 0px 5px var(--bright-red);
+   outline: none;
+}
+
+.list-container{
+  width: 80%;
+}
+
+ul li{
+  display: flex;
+  justify-content: space-between;
+  height: 4vh;
+}
+
+.checkbox{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid var(--light-blue);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.2s, border-color 0.2s;
+  border-radius: 100px;
+  width: 6%;
+}
+
+.checkbox:checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox:active {
+  transform: scale(0.9);
+}
+
+.list-text{
   border-radius: 12px;
+  background-color: var(--light-blue);
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.delete-btn{
+  border: none;
+  background-color: var(--light-purple);
+  color: var(--darker-red);
+  border-radius: 100px;
+  width: 6%;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.delete-btn:active {
+  transform: scale(0.9);
 }
